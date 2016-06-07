@@ -1,0 +1,33 @@
+<html>
+<script src="runtime.js"></script>
+
+<script>
+	
+var n = timeTester(stocks_n), n2 = timeTester(stocks_n2);
+
+document.write("O(n^2)", n2)
+document.write("<br>O(n)  ", n)
+
+
+function stocks_n2(ps){
+	for (maxDif=0,i=_i=0;p=ps[i++];i=_i++)
+		for (;p2=ps[i++];)
+			if (p2-p>maxDif)
+				maxDif=p2-p
+
+	return maxDif
+}
+
+function stocks_n(ps){
+	for (maxDif=0,i=0,min=ps[0];p=ps[i++];)
+		if (p<min)
+			min=p
+		else if (p-min>maxDif)
+				maxDif=p-min
+
+	return maxDif
+}
+
+
+
+</script>
